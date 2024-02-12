@@ -55,4 +55,4 @@ position = Vector2(1242, 337.5)
 shape = SubResource("RectangleShape2D_d20eo")
 
 [node name="Dot" parent="Game" instance=ExtResource("3_yneq5")]
-position = Vector2(527, 345)
+position = Vector2(530, 372)

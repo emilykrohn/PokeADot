@@ -7,7 +7,7 @@
 radius = 131.381
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(1.2, 1.2)
+scale = Vector2(1.4, 1.4)
 script = ExtResource("1_lhww5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
