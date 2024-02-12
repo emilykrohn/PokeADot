@@ -2,12 +2,13 @@ extends Node2D
 
 var dot_scene = preload("res://Scenes/dot.tscn")
 var rng = RandomNumberGenerator.new()
+var gameover := false
 
 func _ready():
 	spawn_dot()
 
 func _process(_delta):
-	if not has_node("Dot"):
+	if not has_node("Game/Dot"):
 		$UI/Label.count = 3
 		spawn_dot()
 
@@ -16,4 +17,4 @@ func spawn_dot():
 	var random_y = rng.randf_range(50, 598)
 	var dot = dot_scene.instantiate()
 	dot.global_position = Vector2(random_x, random_y)
-	add_child(dot)
+	$Game.add_child(dot)

@@ -1,9 +1,13 @@
 extends StaticBody2D
 
 var can_click := false
+var gameover := false
+
+func _process(delta):
+	gameover = $"../../".gameover
 
 func _input(event):
-	if event is InputEventMouseButton and can_click:
+	if event is InputEventMouseButton and can_click and not gameover:
 		queue_free()
 
 func _on_mouse_entered():
