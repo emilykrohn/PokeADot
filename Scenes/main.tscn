@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckt32f2uykdy6"]
+[gd_scene load_steps=12 format=3 uid="uid://ckt32f2uykdy6"]
 
 [ext_resource type="Texture2D" uid="uid://bqlu4rc76el03" path="res://Art/Background.png" id="1_skqjd"]
 [ext_resource type="Script" path="res://Script/main.gd" id="1_v2iyv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://mcrnclka1xlp" path="res://Scenes/player.tscn" id="2_rmqy0"]
 [ext_resource type="Script" path="res://Script/ScoreLabel.gd" id="3_2afhl"]
 [ext_resource type="Script" path="res://Script/RetryButton.gd" id="4_olvl8"]
+[ext_resource type="AudioStream" uid="uid://c13ifs2ej8btm" path="res://Sounds/Minimalist4.mp3" id="5_3oanl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq3oe"]
 size = Vector2(120, 668)
@@ -90,6 +91,10 @@ theme_override_font_sizes/font_size = 20
 text = "     Retry     "
 script = ExtResource("4_olvl8")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="UI/RetryButton"]
+stream = ExtResource("5_3oanl")
+volume_db = 24.0
+
 [node name="Timer" type="Timer" parent="UI"]
 autostart = true
 
@@ -130,4 +135,5 @@ position = Vector2(1242, 337.5)
 shape = SubResource("RectangleShape2D_d20eo")
 
 [connection signal="pressed" from="UI/RetryButton" to="UI/RetryButton" method="_on_pressed"]
+[connection signal="finished" from="UI/RetryButton/AudioStreamPlayer2D" to="UI/RetryButton" method="_on_audio_stream_player_2d_finished"]
 [connection signal="timeout" from="UI/Timer" to="UI/CountdownLabel" method="_on_timer_timeout"]

@@ -8,6 +8,8 @@ func _process(delta):
 
 func _input(event):
 	if event is InputEventMouseButton and can_click and not gameover:
+		$AudioStreamPlayer2D.play()
+		await get_tree().create_timer(0.05).timeout
 		queue_free()
 
 func _on_mouse_entered():
@@ -15,3 +17,7 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	can_click = false
+
+
+func _on_audio_stream_player_2d_finished():
+	$AudioStreamPlayer2D.stop()
