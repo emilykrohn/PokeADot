@@ -12,6 +12,9 @@ func _process(_delta):
 		$UI/CountdownLabel.count = 3
 		$UI/ScoreLabel.score += 1
 		spawn_dot()
+	if gameover:
+		$UI/GameoverLabel.show()
+		$UI/RetryButton.show()
 
 func spawn_dot():
 	var random_x = rng.randf_range(50, 1102)
