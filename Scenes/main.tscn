@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckt32f2uykdy6"]
+[gd_scene load_steps=11 format=3 uid="uid://ckt32f2uykdy6"]
 
 [ext_resource type="Texture2D" uid="uid://bqlu4rc76el03" path="res://Art/Background.png" id="1_skqjd"]
 [ext_resource type="Script" path="res://Script/main.gd" id="1_v2iyv"]
 [ext_resource type="Script" path="res://Scenes/Label.gd" id="2_j02tq"]
 [ext_resource type="PackedScene" uid="uid://mcrnclka1xlp" path="res://Scenes/player.tscn" id="2_rmqy0"]
 [ext_resource type="Script" path="res://Script/ScoreLabel.gd" id="3_2afhl"]
+[ext_resource type="Script" path="res://Script/RetryButton.gd" id="4_olvl8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq3oe"]
 size = Vector2(120, 668)
@@ -87,6 +88,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 20
 text = "     Retry     "
+script = ExtResource("4_olvl8")
 
 [node name="Timer" type="Timer" parent="UI"]
 autostart = true
@@ -127,4 +129,5 @@ shape = SubResource("RectangleShape2D_7it7t")
 position = Vector2(1242, 337.5)
 shape = SubResource("RectangleShape2D_d20eo")
 
+[connection signal="pressed" from="UI/RetryButton" to="UI/RetryButton" method="_on_pressed"]
 [connection signal="timeout" from="UI/Timer" to="UI/CountdownLabel" method="_on_timer_timeout"]
