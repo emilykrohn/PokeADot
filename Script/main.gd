@@ -9,6 +9,7 @@ func _ready():
 func _process(_delta):
 	if not has_node("Dot"):
 		spawn_dot()
+		$UI/Label.count = 3
 
 func spawn_dot():
 	var random_x = rng.randf_range(30, 1122)
