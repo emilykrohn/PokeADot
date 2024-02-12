@@ -21,6 +21,7 @@ size = Vector2(174, 695)
 [node name="Game" type="Node2D" parent="."]
 
 [node name="Background" type="Sprite2D" parent="Game"]
+z_index = -2
 position = Vector2(540, 350)
 texture = ExtResource("1_skqjd")
 
@@ -54,4 +55,4 @@ position = Vector2(1242, 337.5)
 shape = SubResource("RectangleShape2D_d20eo")
 
 [node name="Dot" parent="Game" instance=ExtResource("3_yneq5")]
-position = Vector2(665, 396)
+position = Vector2(527, 345)
