@@ -8,12 +8,12 @@ func _ready():
 
 func _process(_delta):
 	if not has_node("Dot"):
-		spawn_dot()
 		$UI/Label.count = 3
+		spawn_dot()
 
 func spawn_dot():
-	var random_x = rng.randf_range(30, 1122)
-	var random_y = rng.randf_range(30, 618)
+	var random_x = rng.randf_range(50, 1102)
+	var random_y = rng.randf_range(50, 598)
 	var dot = dot_scene.instantiate()
 	dot.global_position = Vector2(random_x, random_y)
 	add_child(dot)
