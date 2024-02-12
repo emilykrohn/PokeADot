@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://ckt32f2uykdy6"]
 
 [ext_resource type="Texture2D" uid="uid://bqlu4rc76el03" path="res://Art/Background.png" id="1_skqjd"]
+[ext_resource type="Script" path="res://Script/main.gd" id="1_v2iyv"]
 [ext_resource type="PackedScene" uid="uid://mcrnclka1xlp" path="res://Scenes/player.tscn" id="2_rmqy0"]
-[ext_resource type="PackedScene" uid="uid://vnuuk4fsey2s" path="res://Scenes/dot.tscn" id="3_yneq5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq3oe"]
 size = Vector2(120, 668)
@@ -17,6 +17,7 @@ size = Vector2(1165, 114)
 size = Vector2(174, 695)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_v2iyv")
 
 [node name="Game" type="Node2D" parent="."]
 
@@ -53,6 +54,3 @@ shape = SubResource("RectangleShape2D_7it7t")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Border/Right"]
 position = Vector2(1242, 337.5)
 shape = SubResource("RectangleShape2D_d20eo")
-
-[node name="Dot" parent="Game" instance=ExtResource("3_yneq5")]
-position = Vector2(530, 372)
