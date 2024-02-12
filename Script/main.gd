@@ -9,7 +9,8 @@ func _ready():
 
 func _process(_delta):
 	if not has_node("Game/Dot"):
-		$UI/Label.count = 3
+		$UI/CountdownLabel.count = 3
+		$UI/ScoreLabel.score += 1
 		spawn_dot()
 
 func spawn_dot():

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckt32f2uykdy6"]
+[gd_scene load_steps=10 format=3 uid="uid://ckt32f2uykdy6"]
 
 [ext_resource type="Texture2D" uid="uid://bqlu4rc76el03" path="res://Art/Background.png" id="1_skqjd"]
 [ext_resource type="Script" path="res://Script/main.gd" id="1_v2iyv"]
 [ext_resource type="Script" path="res://Scenes/Label.gd" id="2_j02tq"]
 [ext_resource type="PackedScene" uid="uid://mcrnclka1xlp" path="res://Scenes/player.tscn" id="2_rmqy0"]
+[ext_resource type="Script" path="res://Script/ScoreLabel.gd" id="3_2afhl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq3oe"]
 size = Vector2(120, 668)
@@ -26,7 +27,7 @@ anchors_preset = 0
 offset_right = 1155.0
 offset_bottom = 651.0
 
-[node name="Label" type="Label" parent="UI"]
+[node name="CountdownLabel" type="Label" parent="UI"]
 z_index = 2
 layout_mode = 0
 offset_left = 16.0
@@ -37,6 +38,18 @@ theme_override_colors/font_color = Color(0.992157, 0, 0.286275, 1)
 theme_override_font_sizes/font_size = 30
 text = "Countdown: 3"
 script = ExtResource("2_j02tq")
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+z_index = 2
+layout_mode = 0
+offset_left = 899.0
+offset_top = 15.0
+offset_right = 995.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.992157, 0, 0.286275, 1)
+theme_override_font_sizes/font_size = 30
+text = "Score: "
+script = ExtResource("3_2afhl")
 
 [node name="Timer" type="Timer" parent="UI"]
 autostart = true
@@ -77,4 +90,4 @@ shape = SubResource("RectangleShape2D_7it7t")
 position = Vector2(1242, 337.5)
 shape = SubResource("RectangleShape2D_d20eo")
 
-[connection signal="timeout" from="UI/Timer" to="UI/Label" method="_on_timer_timeout"]
+[connection signal="timeout" from="UI/Timer" to="UI/CountdownLabel" method="_on_timer_timeout"]
