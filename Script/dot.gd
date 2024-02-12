@@ -8,7 +8,6 @@ func _input(event):
 
 func _on_mouse_entered():
 	can_click = true
-	print("enter")
 
 func _on_mouse_exited():
 	can_click = false
