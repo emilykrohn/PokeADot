@@ -9,3 +9,4 @@ func _on_timer_timeout():
 	count -= 1
 	if count == 0:
 		$"../Timer".stop()
+		$"../../Game/Player".hide()
